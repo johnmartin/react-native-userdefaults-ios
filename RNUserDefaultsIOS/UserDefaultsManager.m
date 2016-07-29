@@ -11,38 +11,31 @@
 @implementation UserDefaultsManager
 
 + (void)setObject:(id)object forKey:(NSString *)key {
-    
-    [[NSUserDefaults standardUserDefaults] setObject:object forKey:key];
+  [[NSUbiquitousKeyValueStore defaultStore] setObject:object forKey:key];
 }
 
 + (void)setBool:(bool)value forKey:(NSString *)key {
-    
-    [[NSUserDefaults standardUserDefaults] setBool:value forKey:key];
+  [[NSUbiquitousKeyValueStore defaultStore] setBool:value forKey:key];
 }
 
 + (void)removeObjectForKey:(NSString *)key {
-    
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+  [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:key];
 }
 
 + (NSArray *)arrayForKey:(NSString *)key {
-    
-    return [[NSUserDefaults standardUserDefaults] arrayForKey:key];
+  return [[NSUbiquitousKeyValueStore defaultStore] arrayForKey:key];
 }
 
 + (NSString *)stringForKey:(NSString *)key {
-    
-    return [[NSUserDefaults standardUserDefaults] stringForKey:key];
+  return [[NSUbiquitousKeyValueStore defaultStore] stringForKey:key];
 }
 
 + (id)objectForKey:(NSString *)key {
-    
-    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+  return [[NSUbiquitousKeyValueStore defaultStore] objectForKey:key];
 }
 
 + (bool)boolForKey:(NSString *)key {
-    
-    return [[NSUserDefaults standardUserDefaults] boolForKey:key];
+  return [[NSUbiquitousKeyValueStore defaultStore] boolForKey:key];
 }
 
 @end
